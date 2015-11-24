@@ -3,7 +3,7 @@ require "pry"
 module Githubber
 	class PullRequests
 		include HTTParty
-		base_uri "https://api.github,com"
+		base_uri "https://api.github.com"
 
 		def initialize(auth_token)
 			@auth = {
@@ -24,7 +24,6 @@ module Githubber
 			PullRequests.get("/repos/#{owner}/#{repos}/pulls/#{number}/merge", headers: @auth)
 		end
 	end
-binding.pry
 end
 
 
